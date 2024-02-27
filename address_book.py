@@ -21,6 +21,25 @@ class AddressBook:
         else:
             return []
 
+    def add_contact(self, first_name, last_name, phone_number, email):
+        """Add new contact to the address book."""
+        contact = {
+            "firs_name": first_name,
+            "last_name": last_name,
+            "phone_number": phone_number,
+            "email": email,
+        }
+        self.contacts.append(contact)
+        self.save_contacts()
 
-address_book = AddressBook("contacts.json")
-print(address_book.load_contacts())
+    def save_contacts(self):
+        """
+        Dump user input into JSON string.
+        Write out the JSON string to the address book JSON file.
+        """
+        contents = json.dumps(self.contacts)
+        self.file_path.write_text(contents)
+
+
+# address_book = AddressBook("contacts.json")
+# print(address_book.load_contacts())
