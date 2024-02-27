@@ -37,9 +37,8 @@ class AddressBook:
         Dump user input into JSON string.
         Write out the JSON string to the address book JSON file.
         """
-        contents = json.dumps(self.contacts)
+        contents = json.dumps(self.contacts, indent=4)
         self.file_path.write_text(contents)
 
 
 # address_book = AddressBook("contacts.json")
-# print(address_book.load_contacts())
