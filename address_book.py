@@ -21,15 +21,18 @@ class AddressBook:
         else:
             return []
 
-    def add_contact(self, first_name, last_name, phone_number, email):
+    def add_contact(self):
         """Add new contact to the address book."""
         contact = {
-            "firs_name": first_name,
-            "last_name": last_name,
-            "phone_number": phone_number,
-            "email": email,
+            "first_name": input("Type person's First Name: "),
+            "last_name": input("Type person's Last Name: "),
+            "phone_number": int(input("Type person's Phone Number: ")),
+            "email": input("Type person's Email address (optional): "),
         }
-        self.contacts.append(contact)
+        if (contact["first_name"] and contact["last_name"]) and contact["phone_number"]:
+            self.contacts.append(contact)
+        else:
+            print("** Please provide the required contact information **")
         self.save_contacts()
 
     def save_contacts(self):
@@ -41,4 +44,5 @@ class AddressBook:
         self.file_path.write_text(contents)
 
 
-# address_book = AddressBook("contacts.json")
+address_book = AddressBook("contacts.json")
+address_book.add_contact()
