@@ -39,3 +39,12 @@ class AddressBook:
         }
         self.contacts.append(contact)
         self.save_contacts()
+
+    def search_contact(self, search_name):
+        """ "Search for a contact by it's first name."""
+        for contact in self.contacts:
+            if search_name.lower() in contact["first_name"].lower():
+                print(f"Found contact: {contact['first_name']} {contact['last_name']}")
+                print(f"Phone: {contact['phone_number']}, Email: {contact['email']}")
+                return
+        print(f"No contact found for: '{search_name}'.")
