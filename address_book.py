@@ -50,6 +50,10 @@ class AddressBook:
         print(f"No contact found for: '{search_name}'.")
 
     def delete_contact(self, first_name, last_name):
+        """
+        Delete a contact by searching it's first name and last name.
+        If contact is found, it is removed and the file is saved.
+        """
         found_contact = False
         for i, contact in enumerate(self.contacts):
             if (
