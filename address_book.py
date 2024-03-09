@@ -67,4 +67,4 @@ class AddressBook:
                 print(f"Contact '{first_name} {last_name}' deleted successfully.")
                 break
         if not found_contact:
-            print(f"No contact found with name '{first_name} {last_name}'")
+            print(f"No contact found with the name '{first_name} {last_name}'.")
