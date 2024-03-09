@@ -39,6 +39,7 @@ class AddressBook:
         }
         self.contacts.append(contact)
         self.save_contacts()
+        print(f"Contact '{first_name} {last_name}' added successfully.")
 
     def search_contact(self, search_name):
         """Search for a contact by it's first name."""
