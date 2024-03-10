@@ -6,10 +6,10 @@ def main():
 
     while True:
         print("\nAddress Book Menu:")
-        print("1. Add contact")
-        print("2. Search contact")
-        print("3. Delete contact")
-        print("4. Exit")
+        print(" 1. Add contact")
+        print(" 2. Search contact")
+        print(" 3. Delete contact")
+        print(" 4. Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -26,10 +26,10 @@ def main():
             last_name = input("Enter last name of the contact to delete: ")
             address_book.delete_contact(first_name, last_name)
         elif choice == "4":
-            print("Exiting address book..")
+            print("\nExiting address book..")
             break
         else:
-            print("Invalid choice. Please select '1, 2, 3 or 4'.")
+            print("\n Invalid choice. Please select '1, 2, 3 or 4'.")
 
 
 if __name__ == "__main__":
