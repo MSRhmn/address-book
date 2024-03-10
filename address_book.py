@@ -39,16 +39,16 @@ class AddressBook:
         }
         self.contacts.append(contact)
         self.save_contacts()
-        print(f"Contact '{first_name} {last_name}' added successfully.")
+        print(f"\n Contact '{first_name} {last_name}' added successfully.")
 
     def search_contact(self, search_name):
         """Search for a contact by it's first name."""
         for contact in self.contacts:
             if search_name.lower() in contact["first_name"].lower():
-                print(f"Found contact: {contact['first_name']} {contact['last_name']}")
-                print(f"Phone: {contact['phone_number']}, Email: {contact['email']}")
+                print(f"\n Found contact: {contact['first_name']} {contact['last_name']}")
+                print(f" Phone: {contact['phone_number']}, Email: {contact['email']}")
                 return
-        print(f"No contact found for: '{search_name}'.")
+        print(f"\n No contact found for: '{search_name}'.")
 
     def delete_contact(self, first_name, last_name):
         """
@@ -64,7 +64,7 @@ class AddressBook:
                 del self.contacts[i]
                 self.save_contacts()
                 found_contact = True
-                print(f"Contact '{first_name} {last_name}' deleted successfully.")
+                print(f"\n Contact '{first_name} {last_name}' deleted successfully.")
                 break
         if not found_contact:
-            print(f"No contact found with the name '{first_name} {last_name}'.")
+            print(f"\n No contact found with the name '{first_name} {last_name}'.")
