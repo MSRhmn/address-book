@@ -22,10 +22,7 @@ class AddressBook:
             return []
 
     def save_contacts(self):
-        """
-        Dump user input into JSON string.
-        Write out the JSON string to the address book JSON file.
-        """
+        """Dump the user input into corresponsing JSON file."""
         with open(self.filename, "w") as file:
             return json.dump(self.contacts, file, indent=4)
 
