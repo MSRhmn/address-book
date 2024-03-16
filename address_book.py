@@ -16,8 +16,8 @@ class AddressBook:
         If the file doesn't exist or cannot be read, return an empty list.
         """
         if self.file_path.exists():
-            contents = self.file_path.read_text()
-            return json.loads(contents)
+            with open(self.filename, "r") as file:
+                return json.load(file)
         else:
             return []
 
@@ -26,8 +26,8 @@ class AddressBook:
         Dump user input into JSON string.
         Write out the JSON string to the address book JSON file.
         """
-        contents = json.dumps(self.contacts, indent=4)
-        self.file_path.write_text(contents)
+        with open(self.filename, "w") as file:
+            return json.dump(self.contacts, file, indent=4)
 
     def add_contact(self, first_name, last_name, phone_number, email=""):
         """Add new contact to the address book."""
@@ -45,7 +45,9 @@ class AddressBook:
         """Search for a contact by it's first name."""
         for contact in self.contacts:
             if search_name.lower() in contact["first_name"].lower():
-                print(f"\n Found contact: {contact['first_name']} {contact['last_name']}")
+                print(
+                    f"\n Found contact: {contact['first_name']} {contact['last_name']}"
+                )
                 print(f" Phone: {contact['phone_number']}, Email: {contact['email']}")
                 return
         print(f"\n No contact found for: '{search_name}'.")
