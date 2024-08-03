@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Custom app
+    "address_book",
+    # Default app
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
