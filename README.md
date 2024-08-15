@@ -1,4 +1,34 @@
-# Address Book Management System
+# Django Address Book Application
 
-- The Address Book Management System is a Python-based application that allows users to manage their contacts efficiently. It provides features for adding, searching, and deleting contacts, all while storing the data in a JSON file.
-- Requires `Python 3.x` to run the program, uses built-in `josn` and `pathlib` module.
+## Overview
+
+This project is a basic Address Book application built with Django. It allows users to add, view, search, and delete contacts. The application uses Django's Model-View-Template (MVT) architecture and includes basic form handling, template rendering, and URL routing.
+
+## Requirements
+
+- Python 3.x
+- Django 3.x or later
+
+## Installation
+
+1. **Clone the repository**
+
+   `git clone https://github.com/yourusername/django-address-book.git`
+   `cd django-address-book`
+
+2. **Create and activate a virtual environment**
+
+    `python3 -m venv venv`
+    `source venv/bin/activate`  # On Windows use `venv\Scripts\activate`
+
+3. **Install the required packages**
+
+    `pip install -r requirements.txt`
+
+4. **Apply migrations to set up the database**
+
+    `python manage.py migrate`
+
+5. **Run the development server**
+
+    `python manage.py runserver`
