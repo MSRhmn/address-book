@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Contact</title>
-</head>
-<body>
-    <h1>Search Results</h1>
-    <p>Search query: {{ query }}</p>
-    <ul>
-        {% for contact in contacts %}
-            <li>{{ contact.first_name }} {{ contact.last_name }} - {{ contact.phone_number }} - {{ contact.email }}
-                <a href="{% url 'delete_contact' contact.pk %}">Delete</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'home' %}">Back to Contacts</a>
-</body>
-</html>
+{% extends "address_book/base.html" %}
+
+{% block title %}Search Contact{% endblock %}
+
+{% block content %}
+<h1 class="my-4">Search Results</h1>
+<p>Search query: {{ query }}</p>
+<ul>
+    {% for contact in contacts %}
+        <li>{{ contact.first_name }} {{ contact.last_name }} - {{ contact.phone_number }} - {{ contact.email }}
+            <a href="{% url 'delete_contact' contact.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Back to Contacts</a>
+{% endblock %}
